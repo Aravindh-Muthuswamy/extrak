@@ -29,3 +29,11 @@ func ConfigureDatabase(){
     fmt.Println("file already exists")
   }
 }
+
+func OpenDatabaseConnection() (*sql.DB){
+  db, err := sql.Open("sqlite3", "./data/extrak.db")
+  if(err != nil){
+    fmt.Println(err)
+  }
+  return db
+}
