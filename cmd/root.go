@@ -1,13 +1,14 @@
 /*
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
 	"fmt"
 	"os"
-  "github.com/extrak/cmd/TestSetup"
+
+	"github.com/extrak/cmd/Setup"
+	"github.com/extrak/cmd/TestSetup"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -35,6 +36,7 @@ func Execute() {
 }
 func addSubCommandsPelletes(){
   rootCmd.AddCommand(TestSetup.TestsetupCmd)
+  rootCmd.AddCommand(Setup.SetupDatabaseCmd)
 }
 func init() {
 	cobra.OnInitialize(initConfig)
